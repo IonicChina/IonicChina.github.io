@@ -21,7 +21,7 @@
   <ul>
     <li>
       <a href="https://developers.google.com/speed/libraries/devguide#angularjs">Google CDN</a><br>
-      e.g. {$ ("//ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/" + doc.packageFile) | code $}
+      e.g. {$ ("//ajax.useso.com/ajax/libs/angularjs/X.Y.Z/" + doc.packageFile) | code $}
     </li>
     <li>
       <a href="http://bower.io">Bower</a><br>
