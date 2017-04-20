@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>ionichina中文社区</title>
-    <link rel="stylesheet" type="text/css" href="http://r.donghongfei.com/assets/css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
 </head>
 
 <body>
@@ -14,11 +14,11 @@
         <div class="header">
             <h1>ionichina中文社区</h1>
             <div class="quote">
-                <p class="quote-text animate-init">嘿，很抱歉，ionichina中文社区就此关闭了。</p>
-                <p class="quote-text animate-init">最开始的初衷，是想建立一个中文的ionic framework学习者交流的地方，开始也花费了很大精力来做，但是最近很长一段时间重心都在工作上，没有时间、精力继续运营这个社区，导致社区内容质量非常有限，并没有像开始自己设想的那样帮助到大家，非常的抱歉！</p>
-                <p class="quote-text animate-init">由于一些原因，对社区服务器造成了无法挽回的损失，因此打算就此关闭这个站点，感谢大家此前的帮助！</p>
-                <p class="quote-text animate-init">希望曾经这里或多或少的帮助到过大家，也希望大家能在学习的路上继续前行。</p>
-                <p class="quote-text animate-init">江湖再见</p>
+              <p class="quote-text animate-init">嘿，很抱歉，ionichina中文社区就此关闭了。</p>
+              <p class="quote-text animate-init">最开始的初衷，是想建立一个中文的ionic framework学习者交流的地方，开始也花费了很大精力来做，但是最近很长一段时间重心都在工作上，没有时间、精力继续运营这个社区，导致社区内容质量非常有限，并没有像开始自己设想的那样帮助到大家，非常的抱歉！</p>
+              <p class="quote-text animate-init">由于一些原因，对社区服务器造成了无法挽回的损失，因此打算就此关闭这个站点，感谢大家此前的帮助！</p>
+              <p class="quote-text animate-init">希望曾经这里或多或少的帮助到过大家，也希望大家能在学习的路上继续前行。</p>
+              <p class="quote-text animate-init">江湖再见</p>
             </div>
         </div>
         <div class="menu">
@@ -28,13 +28,16 @@
             <i class="location-icon"></i>
             <span class="location-text animate-init">Beijing - China</span>
         </div>
+        <div class="relocating">
+            Navigating to: <span class="relocate-location"></span>...
+        </div>
     </div>
 
     <div class="content">
         <span class="close">close</span>
     </div>
 </div>
-<script type="text/javascript" src="http://r.donghongfei.com/assets/vendors/jquery/index.js"></script>
+<script type="text/javascript" src="assets/vendors/jquery/index.js"></script>
 <script>
     $(document).ready(function () {
         var delay = 1;
@@ -67,6 +70,18 @@
         }
 
         function animationQuote() {}
+
+        $(document.body).on('keydown', function (event) {
+            // Press 'b' key
+            if (event.which === 66) {
+                $('.relocate-location').text('Bookmark Page');
+                $('.relocating').css('opacity', 1);
+
+                window.setTimeout(function () {
+                    window.location.href = '/bookmarks.html';
+                }, 1000);
+            }
+        });
     });
 </script>
 <div style="display:none;">

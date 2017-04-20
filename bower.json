@@ -1,9 +1,9 @@
 {
-  "name": "董宏飞",
+  "name": "Vi",
   "version": "v2015",
-  "homepage": "https://github.com/DongHongfei/donghongfei.github.io",
+  "homepage": "https://github.com/iissnan/iissnan.github.com",
   "authors": [
-    "DongHongfei <Hongfei.Dong.V@gmail.com>"
+    "iissnan <iissnan@gmail.com>"
   ],
   "main": "index.html",
   "private": true,
