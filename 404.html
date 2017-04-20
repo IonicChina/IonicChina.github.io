@@ -1,133 +1,92 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Page Not Found :(</title><style>::-moz-selection {
-        background: #b3d4fc;
-        text-shadow: none;
-      }
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>ionichina中文社区</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
+</head>
 
-      ::selection {
-        background: #b3d4fc;
-        text-shadow: none;
-      }
+<body>
+<div class="vi">
+    <div class="sidebar">
+        <div class="header">
+            <h1>ionichina中文社区</h1>
+            <div class="quote">
+              <p class="quote-text animate-init">嘿，很抱歉，ionichina中文社区就此关闭了。</p>
+              <p class="quote-text animate-init">最开始的初衷，是想建立一个中文的ionic framework学习者交流的地方，开始也花费了很大精力来做，但是最近很长一段时间重心都在工作上，没有时间、精力继续运营这个社区，导致社区内容质量非常有限，并没有像开始自己设想的那样帮助到大家，非常的抱歉！</p>
+              <p class="quote-text animate-init">由于一些原因，对社区服务器造成了无法挽回的损失，因此打算就此关闭这个站点，感谢大家此前的帮助！</p>
+              <p class="quote-text animate-init">希望曾经这里或多或少的帮助到过大家，也希望大家能在学习的路上继续前行。</p>
+              <p class="quote-text animate-init">江湖再见</p>
+            </div>
+        </div>
+        <div class="menu">
+            <a href="http://donghongfei.com" class="animate-init">About me</a>
+        </div>
+        <div class="location">
+            <i class="location-icon"></i>
+            <span class="location-text animate-init">Beijing - China</span>
+        </div>
+        <div class="relocating">
+            Navigating to: <span class="relocate-location"></span>...
+        </div>
+    </div>
 
-      html {
-        padding: 30px 10px;
-        font-size: 20px;
-        line-height: 1.4;
-        color: #737373;
-        background: #f0f0f0;
-        -webkit-text-size-adjust: 100%;
-        -ms-text-size-adjust: 100%;
-      }
+    <div class="content">
+        <span class="close">close</span>
+    </div>
+</div>
+<script type="text/javascript" src="assets/vendors/jquery/index.js"></script>
+<script>
+    $(document).ready(function () {
+        var delay = 1;
+        var DELAY_STEP = 200;
+        var animationOptions = { opacity: 1, top: 0};
 
-      html,
-      input {
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      }
+        $('h1').animate(animationOptions).promise()
+                .pipe(animateMain)
+                .pipe(animateLocationIcon);
 
-      body {
-        max-width: 500px;
-        _width: 500px;
-        padding: 30px 20px 50px;
-        border: 1px solid #b3b3b3;
-        border-radius: 4px;
-        margin: 0 auto;
-        box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;
-        background: #fcfcfc;
-      }
+        function animateMain() {
+            var dfd = $.Deferred();
+            var els = $('.animate-init');
+            var size = els.size();
 
-      h1 {
-        margin: 0 10px;
-        font-size: 50px;
-        text-align: center;
-      }
+            els.each(function (index, el) {
+                delay++;
+                $(el).delay(index * DELAY_STEP)
+                        .animate(animationOptions);
+                (size - 1 === index) && dfd.resolve();
+            });
+            return dfd.promise();
+        }
 
-      h1 span {
-        color: #bbb;
-      }
+        function animateLocationIcon() {
+            $('.location-icon').delay(delay * DELAY_STEP).animate({
+                opacity: 1,
+                top: 0
+            }).promise().done(animationQuote);
+        }
 
-      h3 {
-        margin: 1.5em 0 0.5em;
-      }
+        function animationQuote() {}
 
-      p {
-        margin: 1em 0;
-      }
+        $(document.body).on('keydown', function (event) {
+            // Press 'b' key
+            if (event.which === 66) {
+                $('.relocate-location').text('Bookmark Page');
+                $('.relocating').css('opacity', 1);
 
-      ul {
-        padding: 0 0 0 40px;
-        margin: 1em 0;
-      }
+                window.setTimeout(function () {
+                    window.location.href = '/bookmarks.html';
+                }, 1000);
+            }
+        });
+    });
+</script>
+<div style="display:none;">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254410453'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1254410453' type='text/javascript'%3E%3C/script%3E"));</script>
 
-      .container {
-        max-width: 380px;
-        _width: 380px;
-        margin: 0 auto;
-      }
-
-      /* google search */
-
-      #goog-fixurl ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      #goog-fixurl form {
-        margin: 0;
-      }
-
-      #goog-wm-qt,
-      #goog-wm-sb {
-        border: 1px solid #bbb;
-        font-size: 16px;
-        line-height: normal;
-        vertical-align: top;
-        color: #444;
-        border-radius: 2px;
-      }
-
-      #goog-wm-qt {
-        width: 220px;
-        height: 20px;
-        padding: 5px;
-        margin: 5px 10px 0 0;
-        box-shadow: inset 0 1px 1px #ccc;
-      }
-
-      #goog-wm-sb {
-        display: inline-block;
-        height: 32px;
-        padding: 0 10px;
-        margin: 5px 0 0;
-        white-space: nowrap;
-        cursor: pointer;
-        background-color: #f5f5f5;
-        background-image: -webkit-linear-gradient(rgba(255,255,255,0), #f1f1f1);
-        background-image: -moz-linear-gradient(rgba(255,255,255,0), #f1f1f1);
-        background-image: -ms-linear-gradient(rgba(255,255,255,0), #f1f1f1);
-        background-image: -o-linear-gradient(rgba(255,255,255,0), #f1f1f1);
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        *overflow: visible;
-        *display: inline;
-        *zoom: 1;
-      }
-
-      #goog-wm-sb:hover,
-      #goog-wm-sb:focus {
-        border-color: #aaa;
-        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-        background-color: #f8f8f8;
-      }
-
-      #goog-wm-qt:hover,
-      #goog-wm-qt:focus {
-        border-color: #105cb6;
-        outline: 0;
-        color: #222;
-      }
-
-      input::-moz-focus-inner {
-        padding: 0;
-        border: 0;
-      }</style><body><div class="container"><h1>Not found <span>:(</span></h1><p>Sorry, but the page you were trying to view does not exist.</p><p>It looks like this was the result of either:</p><ul><li>a mistyped address</li><li>an out-of-date link</li></ul><script>var GOOG_FIXURL_LANG = (navigator.language || '').slice(0,2),GOOG_FIXURL_SITE = location.host;</script><script src="//linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js"></script></div>
+</div>
+</body>
+</html>
